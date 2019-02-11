@@ -12,12 +12,12 @@ import GoogleMaps
 import GooglePlaces
 
 @UIApplicationMain
-class AppDelegate:UIResponder,UIApplicationDelegate,GIDSignInDelegate {
+class AppDelegate: UIResponder,UIApplicationDelegate,GIDSignInDelegate {
     var loginVC:ViewController!
     var googleHomeVC:HomePageVC!
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
-        if error == nil{
+        if error == nil {
             
         googleHomeVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GoogleHomeVC") as? HomePageVC
             
