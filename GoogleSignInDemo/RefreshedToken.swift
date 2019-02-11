@@ -18,7 +18,8 @@ public func freshToken() {
     request.setValue("token", forHTTPHeaderField: "Authorization")
     do{
     request.httpBody = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
-    }catch let error{
+    } catch let error
+    {
         print("params boday error \(error)")
     };
     let task = URLSession.shared.dataTask(with: request) { (data, response, error) in

@@ -277,7 +277,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
         {
             (data:Data?,response:URLResponse?,error:Error?)->Void
             in
-            if(error==nil)
+            if error == nil
             {
                 DispatchQueue.main.async {
                     do
