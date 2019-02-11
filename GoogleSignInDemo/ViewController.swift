@@ -15,7 +15,6 @@ import GoogleMaps
 import GooglePlaces
 class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDelegate,UITextFieldDelegate {
   
-    
     @IBOutlet weak var countryPickerView: CountryPickerView!
     @IBOutlet weak var SigninGoogle: GIDSignInButton!
     override func viewDidLoad() {
@@ -229,7 +228,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
                         if message == "Verification code is correct."{
                             print("Login successfully")
                             
-                            let myVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "myVC") as! myViewController
+                            let myVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "myVC") as! MyViewController
                             self.present(myVC,animated: true,completion: nil)
                             
                             

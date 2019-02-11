@@ -26,13 +26,9 @@ class MapVC: UIViewController,CLLocationManagerDelegate {
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
-        
         let location = locations.last! as CLLocation
-        
-        /* you can use these values*/
         let lat = location.coordinate.latitude
         print(lat)
-        
         let long = location.coordinate.longitude
     }
     }

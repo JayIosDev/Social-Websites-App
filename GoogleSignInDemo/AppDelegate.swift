@@ -10,7 +10,6 @@ import UIKit
 import GoogleSignIn
 import GoogleMaps
 import GooglePlaces
-
 @UIApplicationMain
 class AppDelegate: UIResponder,UIApplicationDelegate,GIDSignInDelegate {
     var loginVC:ViewController!

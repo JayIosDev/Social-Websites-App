@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 public func freshToken() {
       let userValue: String? = UserDefaults.standard.string(forKey: "NewUserNameKey") ?? ""
       let passWordValue: String? = UserDefaults.standard.string(forKey: "NewPassWordKey") ?? ""
@@ -22,7 +21,6 @@ public func freshToken() {
     {
         print("params boday error \(error)")
     }
-    
     let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
         
         if let jsonData = data, let lResponse  = response as? HTTPURLResponse {
@@ -39,16 +37,15 @@ public func freshToken() {
                         let tokenValue = data["token"]!
                         UserDefaults.standard.set(tokenValue, forKey: "TokenKey")  //Integer
                         UserDefaults.standard.synchronize()
-                    }else {
+                    } else {
                         print("Authentication is failed ")
                     }
                 }
-            }catch let decodeError {
+            } catch let decodeError {
                 print("decodeError \(decodeError)")
             }
             return
         }
-        
         if let lError = error {
             print(lError.localizedDescription)
             print("API error \(String(describing: error))")
