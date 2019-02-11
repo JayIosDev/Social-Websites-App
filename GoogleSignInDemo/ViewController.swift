@@ -15,8 +15,8 @@ import GoogleMaps
 import GooglePlaces
 class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDelegate,UITextFieldDelegate {
   
-    @IBOutlet weak var countryPickerView: CountryPickerView!
-    @IBOutlet weak var SigninGoogle: GIDSignInButton!
+    @IBOutlet weak var countryPickerView : CountryPickerView!
+    @IBOutlet weak var SigninGoogle : GIDSignInButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance()?.uiDelegate = self
@@ -68,40 +68,25 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
         self.present(loginEmailVC, animated: true, completion: nil)
 
     }
-    
-    
-    
-    
-   
-    
-    
-    
-    
-    func viewController(_ viewController: (UIViewController & AKFViewController)!, didCompleteLoginWith accessToken: AKFAccessToken!, state: String!) {
+       func viewController(_ viewController: (UIViewController & AKFViewController)!, didCompleteLoginWith accessToken: AKFAccessToken!, state: String!) {
         
         let homeVc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FbHomeVC") as! FbHomeViewController
-        
-        
-        // Capture the Account info
         
         accountKit.requestAccount { (account, error) in
             
             if error == nil {
-                
                 let accountId = account?.accountID
                 
-                var email:String?
+                var email: String?
                 if let currentEmail = account?.emailAddress{
                     email = currentEmail
-                    
                 }
-                var phoneNum:String?
+                var phoneNum: String?
                 
                 if let phone = account?.phoneNumber {
                     
                     phoneNum = phone.phoneNumber
                 }
-                
                 homeVc.accountIdStr = accountId
                 homeVc.emailStr = email
                 homeVc.phoneStr = phoneNum
@@ -126,30 +111,18 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
         
         print("User cancelled operation")
     }
-
-   
     @IBOutlet weak var countryCodeTextfield: UITextField!
-    
     @IBOutlet weak var phoneNumberTextField: UITextField!
-    
-    
     @IBAction func verification(_ sender: UIButton) {
         verifyingOTPCode()
     }
-    
-    
     @IBAction func sendOtp(_ sender: UIButton) {
         sendingOTP()
-
     }
-    
-    
     func sendingOTP() {
         let countryCode = countryPickerView.selectedCountry.phoneCode
         let phoneNumber = phoneNumberTextField.text
-        
         print(countryCode)
-       
         let params: [String: Any] = ["country_code": countryCode as Any, "phone_number": phoneNumber as Any]
         var request  = URLRequest(url: URL(string: "https://api.authy.com/protected/json/phones/verification/start?api_key=8guB29Gck2rQTh9D0fGJrgl5UxP5gccP&via=sms")!)
         request.httpMethod = "POST"
@@ -170,13 +143,11 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
                     
                     print(userData)
                     
-                    
                 }catch let decodeError {
                     print("decodeError \(decodeError)")
                 }
                 return
             }
-            
             if let lError = error {
                 print(lError.localizedDescription)
                 print("API error \(String(describing: error))")
@@ -185,13 +156,6 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
         }
         task.resume()
     }
-    
-    
-    
-    
-    
-    
-    
     
     @IBOutlet weak var OtpTextField: UITextField!
     
@@ -252,13 +216,9 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
         task.resume();
     }
     
-    
-    
     func fetchingJsonDataFromServer() {
         
-        let page:Int = 1
-
-        
+        let page: Int = 1
         let apikey:String = "1"
         let show  = "inbox"
         let departments = "All"

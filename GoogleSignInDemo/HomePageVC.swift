@@ -13,14 +13,10 @@ import GoogleSignIn
 
 class HomePageVC: UIViewController {
     
-    
-   //som test added
-    
-    var incomingGoogleUser:GIDGoogleUser!
+    var incomingGoogleUser: GIDGoogleUser!
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var nameLbl: UILabel!
-    
     
     @IBOutlet weak var UserIdLbl: UILabel!
     
@@ -35,15 +31,11 @@ class HomePageVC: UIViewController {
         super.viewDidLoad()
     }
     override func viewWillAppear(_ animated: Bool) {
-       
-        
-        
         UserIdLbl.text = incomingGoogleUser.userID
         nameLbl.text = incomingGoogleUser.profile.givenName
         emailLbl.text = incomingGoogleUser.profile.email
         var userImage:UIImage!
         if incomingGoogleUser.profile.hasImage{
-            
             let imageUrl = incomingGoogleUser.profile.imageURL(withDimension: 120)
             URLSession.shared.dataTask(with: imageUrl!) { (imgData, resp, err) in
                 if err == nil {
@@ -55,7 +47,5 @@ class HomePageVC: UIViewController {
         }
         
     }
-    
-    
     
 }

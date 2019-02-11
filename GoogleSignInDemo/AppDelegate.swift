@@ -17,13 +17,11 @@ class AppDelegate: UIResponder,UIApplicationDelegate,GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
         if error == nil {
-            
         googleHomeVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GoogleHomeVC") as? HomePageVC
             
            googleHomeVC.incomingGoogleUser = user
             // present the HomeVC
-            loginVC.present(googleHomeVC,animated: true ,completion: nil)
-    
+            loginVC.present(googleHomeVC,animated:true,completion: nil)
         }
     }
     
@@ -32,8 +30,6 @@ class AppDelegate: UIResponder,UIApplicationDelegate,GIDSignInDelegate {
                                                  sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
                                                  annotation: options[UIApplication.OpenURLOptionsKey.annotation])
     }
-    
-    
     var window:UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -53,27 +49,15 @@ class AppDelegate: UIResponder,UIApplicationDelegate,GIDSignInDelegate {
         // Override point for customization after application launch.
         return true
     }
-
     func applicationWillResignActive(_ application: UIApplication) {
-        
     }
-
     func applicationDidEnterBackground(_ application: UIApplication) {
-        
     }
-
     func applicationWillEnterForeground(_ application: UIApplication) {
-      
     }
-
     func applicationDidBecomeActive(_ application: UIApplication) {
-      
     }
-
     func applicationWillTerminate(_ application: UIApplication) {
-     
     }
-
-
 }
 
