@@ -12,25 +12,19 @@ import GoogleMaps
 import GooglePlaces
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
-    
-
-    var LoginVC:ViewController!
-    var GoogleHomeVC:HomePageVC!
+class AppDelegate: UIResponder,UIApplicationDelegate,GIDSignInDelegate {
+    var loginVC:ViewController!
+    var googleHomeVC:HomePageVC!
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
         if error == nil{
             
-            GoogleHomeVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GoogleHomeVC") as? HomePageVC
+            googleHomeVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GoogleHomeVC") as? HomePageVC
             
-           GoogleHomeVC.incomingGoogleUser = user
+           googleHomeVC.incomingGoogleUser = user
             // present the HomeVC
-            
-            LoginVC.present(GoogleHomeVC,animated: true ,completion: nil)
-            
-            
-            
-            
+            loginVC.present(googleHomeVC,animated: true ,completion: nil)
+    
         }
     }
     
@@ -41,9 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
     }
     
     
-    var window: UIWindow?
-
-
+    var window:UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         GMSServices.provideAPIKey("AIzaSyCzUTybhVinaq5L5q66Rgz4uzbZCIFdQfw")
@@ -56,8 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         GIDSignIn.sharedInstance()?.signInSilently()
 
         self.window  = UIWindow.init(frame: UIScreen.main.bounds)
-        LoginVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as? ViewController
-        self.window?.rootViewController = LoginVC
+        loginVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as? ViewController
+        self.window?.rootViewController = loginVC
         self.window?.makeKeyAndVisible()
         // Override point for customization after application launch.
         return true
