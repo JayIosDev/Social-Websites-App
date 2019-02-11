@@ -239,7 +239,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
                             let alert = UIAlertController.init(title: "Warning", message: "You entered Wrong OTP", preferredStyle: .alert)
                             
                             alert.addAction(UIAlertAction(title: "Go back", style: .default, handler: nil))
-                            self.present(alert,animated: true,completion: nil)
+                            self.present(alert , animated:true , completion: nil)
                         }
                         
                     }
