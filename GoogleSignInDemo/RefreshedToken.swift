@@ -22,8 +22,10 @@ public func freshToken() {
     {
         print("params boday error \(error)")
     };
+    
     let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-        if let jsonData = data, let lResponse  = response as? HTTPURLResponse{
+        
+        if let jsonData = data, let lResponse  = response as? HTTPURLResponse {
             do {
                 print("status code \(lResponse.statusCode)")
                 var userData = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)as! [String:Any]
