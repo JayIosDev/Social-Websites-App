@@ -32,7 +32,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
         return true
     }
     
-    func prepareFBLoginViewController(loginViewController:UIViewController & AKFViewController){
+    func prepareFBLoginViewController(loginViewController:UIViewController & AKFViewController) {
         loginViewController.delegate = self
         loginViewController.enableSendToFacebook = true
         loginViewController.enableGetACall = true
@@ -43,7 +43,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
         
     }
     
-    func setUpGoogleButton(){
+    func setUpGoogleButton() {
         
        SigninGoogle.style = .wide
         SigninGoogle.colorScheme = .dark
@@ -198,7 +198,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
     
     var userArray = [String:Any]()
 
-    func verifyingOTPCode(){
+    func verifyingOTPCode() {
         
         let otpCode = OtpTextField.text
         let mobileNumber = phoneNumberTextField.text
@@ -239,7 +239,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
                             let alert = UIAlertController.init(title: "Warning", message: "You entered Wrong OTP", preferredStyle: .alert)
                             
                             alert.addAction(UIAlertAction(title: "Go back", style: .default, handler: nil))
-                            self.present(alert , animated:true , completion: nil)
+                            self.present(alert,animated:true,completion: nil)
                         }
                         
                     }
@@ -255,7 +255,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
     
     
     
-    func fetchingJsonDataFromServer(){
+    func fetchingJsonDataFromServer() {
         
         let page:Int = 1
 
@@ -264,7 +264,8 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
         let show  = "inbox"
         let departments = "All"
         let Token1: String? = UserDefaults.standard.string(forKey: "TokenKey") ?? ""
-        let urlStr = String(format: "http://faveo-mobileapps.tk/helpdeskMobile/public/api/v2/helpdesk/get-tickets?api=%@&show=%@&departments=%@&page=%d",apikey,show,departments,page)
+        let urlStr = String(format:"http://faveo-mobileapps.tk/helpdeskMobile/public/api/v2/helpdesk/get-tickets?api=%@&show=%@&departments=%@&page=%d",
+                            apikey,show,departments,page)
         var request =  URLRequest(url: URL(string: urlStr)!)
         
         //let apiToken = Token1
@@ -329,9 +330,9 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("token", forHTTPHeaderField: "Authorization")
-        do{
+        do {
             request.httpBody = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
-        }catch let error{
+        }catch let error {
             print("params boday error \(error)")
         };
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -354,13 +355,13 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
                             let tokenValue = data["token"]!
                             UserDefaults.standard.set(tokenValue, forKey: "TokenKey")
                       
-                        }else{
+                        }else {
                             //error
                         }
                     }
                     
                     
-                }catch let decodeError {
+                } catch let decodeError {
                     print("decodeError \(decodeError)")
                 }
                 return
