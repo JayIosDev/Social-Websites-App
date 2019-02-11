@@ -16,23 +16,24 @@ public func freshToken() {
     request.httpMethod = "POST"
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
     request.setValue("token", forHTTPHeaderField: "Authorization")
-    do{
+    do {
     request.httpBody = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
     } catch let error
     {
         print("params boday error \(error)")
-    };
+    }
     
     let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
         
         if let jsonData = data, let lResponse  = response as? HTTPURLResponse {
             do {
                 print("status code \(lResponse.statusCode)")
-                var userData = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)as! [String:Any]
+        var userData = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [String:Any]
                 print(userData)
-                let data:[String:Any]! = userData["data"] as! [String : Any]
-                if userData["success"] != nil && userData["data"] != nil{
-                    let successValue:Int = userData["success"] as! Int
+                let data:[String:Any] = userData?["data"] as! [String : Any]
+                if userData?["success"] != nil && userData?["data"] != nil
+                {
+                    let successValue:Int = userData?["success"] as! Int
                     print(successValue)
                     if successValue == 1  {
                         let tokenValue = data["token"]!
