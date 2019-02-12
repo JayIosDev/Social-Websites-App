@@ -13,9 +13,9 @@ class FbHomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    var accountIdStr:String?
-    var emailStr:String?
-    var phoneStr:String?
+    var accountIdStr: String?
+    var emailStr: String?
+    var phoneStr: String?
     var incomingAccountKit:AKFAccountKit!
     @IBOutlet weak var accountID: UILabel!
     @IBOutlet weak var email: UILabel!
