@@ -10,27 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoogleSignInDemo/ViewController.swift"
-            timestampString = "570956397.915908"
+            timestampString = "572118321.9656481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "307"
-            endingLineNumber = "307"
-            landmarkName = "fetchingJsonDataFromServer()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GoogleSignInDemo/ViewController.swift"
-            timestampString = "570956397.9164619"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "341"
-            endingLineNumber = "341"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
             landmarkName = "getLoginDetails()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +26,39 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoogleSignInDemo/ViewController.swift"
-            timestampString = "570956397.916816"
+            timestampString = "572118321.966329"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "346"
-            endingLineNumber = "346"
+            startingLineNumber = "337"
+            endingLineNumber = "337">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoogleSignInDemo/ViewController.swift"
+            timestampString = "572118321.966629"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "340"
+            endingLineNumber = "340">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoogleSignInDemo/ViewController.swift"
+            timestampString = "572118321.966889"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
             landmarkName = "getLoginDetails()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,12 +70,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoogleSignInDemo/ViewController.swift"
-            timestampString = "570956397.917158"
+            timestampString = "572118321.9672509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
-            landmarkName = "fetchingJsonDataFromServer()"
+            startingLineNumber = "282"
+            endingLineNumber = "282"
+            landmarkName = "getLoginDetails()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,28 +86,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoogleSignInDemo/ViewController.swift"
-            timestampString = "570956397.917501"
+            timestampString = "572118321.967585"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
-            landmarkName = "fetchingJsonDataFromServer()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GoogleSignInDemo/ViewController.swift"
-            timestampString = "570956397.917837"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "288"
-            endingLineNumber = "288"
-            landmarkName = "fetchingJsonDataFromServer()"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
+            landmarkName = "getLoginDetails()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

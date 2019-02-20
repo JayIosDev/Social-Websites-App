@@ -102,13 +102,9 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
     }
     
     func viewController(_ viewController: (UIViewController & AKFViewController)!, didFailWithError error: Error!) {
-        
         print(error.localizedDescription)
-        
     }
-    
     func viewControllerDidCancel(_ viewController: (UIViewController & AKFViewController)!) {
-        
         print("User cancelled operation")
     }
     @IBOutlet weak var countryCodeTextfield: UITextField!
@@ -156,20 +152,13 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
         }
         task.resume()
     }
-    
     @IBOutlet weak var OtpTextField: UITextField!
-    
     var userArray = [String:Any]()
-
     func verifyingOTPCode() {
-        
         let otpCode = OtpTextField.text
         let mobileNumber = phoneNumberTextField.text
         let countryCode = countryPickerView.selectedCountry.phoneCode
-        
         let apiKey1 = "8guB29Gck2rQTh9D0fGJrgl5UxP5gccP"
-        
-        
         let urlStr = String(format: "https://api.authy.com/protected/json/phones/verification/check?api_key=%@&verification_code=%@&phone_number=%@&country_code=%@",apiKey1,otpCode!,mobileNumber!,countryCode)
         print(urlStr)
         var request =  URLRequest(url: URL(string: urlStr)!)
@@ -191,20 +180,15 @@ class ViewController: UIViewController,GIDSignInUIDelegate,AKFViewControllerDele
                     let message = self.userArray["message"] as! String
                         if message == "Verification code is correct."{
                             print("Login successfully")
-                            
-                            let myVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "myVC") as! MyViewController
+                            let myVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "myVC") as! myViewController
                             self.present(myVC,animated: true,completion: nil)
-                            
-                            
-                            
+                      
                         }else {
                             print("invalid OTP please try again")
                             let alert = UIAlertController.init(title: "Warning", message: "You entered Wrong OTP", preferredStyle: .alert)
-                            
                             alert.addAction(UIAlertAction(title: "Go back", style: .default, handler: nil))
                             self.present(alert,animated:true,completion: nil)
                         }
-                        
                     }
                     catch
                     {
